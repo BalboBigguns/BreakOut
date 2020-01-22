@@ -1,6 +1,6 @@
 # GameFX
 
-**Version:** Alpha 1.0
+**Version:** Alpha 2.0
 
 **IsDone:**
   * game logic
