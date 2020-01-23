@@ -92,21 +92,25 @@ public abstract class GameObject implements Loggable{
         return column;
     }
 
-    public double top() {
-        return position.y;
-    }
+    // returns position of top edge of GameObject
+    public double top() { return position.y; }
+    // positions GameObjects top edge on provided y coordinate
+    public void setTop(double y) {position.y = y; }
 
-    public double bot() {
-        return position.y + height;
-    }
+    // returns position of bottom edge of GameObject
+    public double bot() { return position.y + height; }
+    // positions GameObjects bottom edge on provided y coordinate
+    public void setBot(double y) {position.y = y - (height + 1); }
 
-    public double right() {
-        return position.x + width;
-    }
+    // returns position of right edge of GameObject
+    public double right() { return position.x + width; }
+    // positions GameObjects right edge on provided x coordinate
+    public void setRigh(double x) {position.x = x - (width + 1); }
 
-    public double left() {
-        return position.x;
-    }
+    // returns position of left edge of GameObject
+    public double left() { return position.x; }
+    // positions GameObjects left edge on provided x coordinate
+    public void setLeft(double x) {position.x = x; }
 
     public Vector2D topRightCorner() {
         return new Vector2D(position).add(width, 0);

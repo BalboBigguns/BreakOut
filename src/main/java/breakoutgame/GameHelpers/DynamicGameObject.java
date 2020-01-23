@@ -109,20 +109,20 @@ public abstract class DynamicGameObject extends GameObject {
         removeFromGrid();
 
         if (right() >= Map.MAP_WIDTH) {
-            position.x = Map.MAP_WIDTH - (width + 1);
+            setRigh(Map.MAP_WIDTH);
             output = new Collision(Type.RIGHT_BOUND);
         }
         else if (left() < 0) {
-            position.x = 0;
+            setLeft(0);
             output = new Collision(Type.LEFT_BOUND);
         }
 
         if (bot() >= Map.MAP_HEIGHT) {
-            position.y = Map.MAP_HEIGHT - (height + 1);
+            setBot(Map.MAP_HEIGHT);
             output = new Collision(Type.BOTTOM_BOUND);
         }
         else if (top() < Map.MAP_TOP_BOUNDARY) {
-            position.y = Map.MAP_TOP_BOUNDARY;
+            setTop(Map.MAP_TOP_BOUNDARY);
             output = new Collision(Type.TOP_BOUND);
         }
         updateGrid();
@@ -159,16 +159,14 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    position.x = (int)collisionPoint.x - (width + 1);        // getting the moving obj out of collision
-                    position.y = (int)collisionPoint.y - (height + 1);       // getting the moving obj out of collision
-
+                    setRigh((int)collisionPoint.x); // getting the moving obj out of collision
+                    setBot((int)collisionPoint.y);  // getting the moving obj out of collision
                     velocity.x *= -1;
                 }
             }
             else {
-                position.x = (int)collisionPoint.x - (width + 1);             // getting the moving obj out of collision
-                position.y = (int)collisionPoint.y - (height + 1);            // getting the moving obj out of collision
-
+                setRigh((int)collisionPoint.x); // getting the moving obj out of collision
+                setBot((int)collisionPoint.y);  // getting the moving obj out of collision
                 velocity.y *= -1;
             }
 
@@ -201,16 +199,14 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    position.x = (int)collisionPoint.x;
-                    position.y = (int)collisionPoint.y - (height + 1);
-
+                    setLeft((int)collisionPoint.x);
+                    setBot((int)collisionPoint.y);
                     velocity.x *= -1;
                 }
             }
             else {
-                position.x = (int)collisionPoint.x;
-                position.y = (int)collisionPoint.y - (height + 1);
-
+                setLeft((int)collisionPoint.x);
+                setBot((int)collisionPoint.y);
                 velocity.y *= -1;
             }
         }
@@ -242,16 +238,14 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    position.x = (int)collisionPoint.x;
-                    position.y = (int)collisionPoint.y;
-
+                    setLeft((int)collisionPoint.x);
+                    setTop((int)collisionPoint.y);
                     velocity.x *= -1;
                 }
             }
             else {
-                position.x = (int)collisionPoint.x;
-                position.y = (int)collisionPoint.y;
-
+                setLeft((int)collisionPoint.x);
+                setTop((int)collisionPoint.y);
                 velocity.y *= -1;
             }
         }
@@ -283,16 +277,14 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    position.x = (int)collisionPoint.x - (width + 1);
-                    position.y = (int)collisionPoint.y;
-
+                    setRigh((int)collisionPoint.x);
+                    setTop((int)collisionPoint.y);
                     velocity.x *= -1;
                 }
             }
             else {
-                position.x = (int)collisionPoint.x - (width + 1);
-                position.y = (int)collisionPoint.y;
-
+                setRigh((int)collisionPoint.x);
+                setTop((int)collisionPoint.y);
                 velocity.y *= -1;
             }
         }
