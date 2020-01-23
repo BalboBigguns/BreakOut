@@ -58,13 +58,16 @@ public abstract class DynamicGameObject extends GameObject {
     protected Collision move(double newX, double newY) {
         // IMPORTANT: first check for collisions then boundary check to be able to rewind move() step
 
+        // Removing the object from grid (becomes invisible for the map
         removeFromGrid();
+
+        // Performing the time step position change
         position.x += newX;
         position.y += newY;
+
+        // Loading the obj back to the grid
         updateGrid();
 
-        double backgroundWidth = Map.MAP_WIDTH;
-        double backgroundHeight = Map.MAP_HEIGHT;
         Collision output = new Collision(Type.NONE);
 
 
@@ -105,8 +108,8 @@ public abstract class DynamicGameObject extends GameObject {
 
         removeFromGrid();
 
-        if (right() >= backgroundWidth) {
-            position.x = backgroundWidth - (width + 1);
+        if (right() >= Map.MAP_WIDTH) {
+            position.x = Map.MAP_WIDTH - (width + 1);
             output = new Collision(Type.RIGHT_BOUND);
         }
         else if (left() < 0) {
@@ -114,8 +117,8 @@ public abstract class DynamicGameObject extends GameObject {
             output = new Collision(Type.LEFT_BOUND);
         }
 
-        if (bot() >= backgroundHeight) {
-            position.y = backgroundHeight - (height + 1);
+        if (bot() >= Map.MAP_HEIGHT) {
+            position.y = Map.MAP_HEIGHT - (height + 1);
             output = new Collision(Type.BOTTOM_BOUND);
         }
         else if (top() < Map.MAP_TOP_BOUNDARY) {
@@ -156,20 +159,21 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    collisionPoint.x = (int)collisionPoint.x;
-                    collisionPoint.y = (int)collisionPoint.y;
+                    position.x = (int)collisionPoint.x - (width + 1);        // getting the moving obj out of collision
+                    position.y = (int)collisionPoint.y - (height + 1);       // getting the moving obj out of collision
 
                     velocity.x *= -1;
                 }
             }
             else {
-                collisionPoint.x = (int)collisionPoint.x;
-                collisionPoint.y = (int)collisionPoint.y;
+                position.x = (int)collisionPoint.x - (width + 1);             // getting the moving obj out of collision
+                position.y = (int)collisionPoint.y - (height + 1);            // getting the moving obj out of collision
 
                 velocity.y *= -1;
             }
+
         }
-        else if (velocity.x < 0 && velocity.y >= 0) {
+        else if (velocity.x < 0 && velocity.y >= 0) {   // <=v  obj is moving left and down
             Vector2D prevPosLeftBotCorner = new Vector2D(position).sub(velocity).add(0, height); // go back to the state  before collision
 
             double closestDist = prevPosLeftBotCorner.distance(objColliding[0].topRightCorner());
@@ -197,20 +201,20 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    collisionPoint.x = (int)collisionPoint.x;
-                    collisionPoint.y = (int)collisionPoint.y;
+                    position.x = (int)collisionPoint.x;
+                    position.y = (int)collisionPoint.y - (height + 1);
 
                     velocity.x *= -1;
                 }
             }
             else {
-                collisionPoint.x = (int)collisionPoint.x;
-                collisionPoint.y = (int)collisionPoint.y;
+                position.x = (int)collisionPoint.x;
+                position.y = (int)collisionPoint.y - (height + 1);
 
                 velocity.y *= -1;
             }
         }
-        else if (velocity.x <= 0 && velocity.y < 0) {
+        else if (velocity.x <= 0 && velocity.y < 0) {   // <=^ obj is moving left and up
             Vector2D prevPosLeftTopCorner = new Vector2D(position).sub(velocity).add(0, 0); // go back to the state  before collision
 
             double closestDist = prevPosLeftTopCorner.distance(objColliding[0].botRightCorner());
@@ -238,20 +242,20 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    collisionPoint.x = (int)collisionPoint.x;
-                    collisionPoint.y = (int)collisionPoint.y;
+                    position.x = (int)collisionPoint.x;
+                    position.y = (int)collisionPoint.y;
 
                     velocity.x *= -1;
                 }
             }
             else {
-                collisionPoint.x = (int)collisionPoint.x;
-                collisionPoint.y = (int)collisionPoint.y;
+                position.x = (int)collisionPoint.x;
+                position.y = (int)collisionPoint.y;
 
                 velocity.y *= -1;
             }
         }
-        else if (velocity.x > 0 && velocity.y <= 0) {
+        else if (velocity.x > 0 && velocity.y <= 0) { // =>^ obj is moving right and up
             Vector2D prevPosRightTopCorner = new Vector2D(position).sub(velocity).add(width, 0); // go back to the state  before collision
 
             double closestDist = prevPosRightTopCorner.distance(objColliding[0].botLeftCorner());
@@ -279,15 +283,15 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    collisionPoint.x = (int)collisionPoint.x;
-                    collisionPoint.y = (int)collisionPoint.y;
+                    position.x = (int)collisionPoint.x - (width + 1);
+                    position.y = (int)collisionPoint.y;
 
                     velocity.x *= -1;
                 }
             }
             else {
-                collisionPoint.x = (int)collisionPoint.x;
-                collisionPoint.y = (int)collisionPoint.y;
+                position.x = (int)collisionPoint.x - (width + 1);
+                position.y = (int)collisionPoint.y;
 
                 velocity.y *= -1;
             }
