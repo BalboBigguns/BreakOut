@@ -10,12 +10,13 @@ import javafx.scene.canvas.GraphicsContext;
 
 // main container for Blocks
 // owns grid with tiles for object collision algorithms
-// map structure: 16 x 20   -->  TODO: make it 16 x 18
+// map structure: 16 x 19
 public class Map {
+    static final public int MAP_TOP_BOUNDARY = Block.BLOCK_HEIGHT * 2;
     static final public int MAP_WIDTH = GameFXApp.WINDOW_WIDTH; // 640
-    static final public int MAP_HEIGHT = GameFXApp.WINDOW_HEIGHT; // 630
-    static final public int MAP_GRID_WIDTH = MAP_WIDTH / (Block.BLOCK_WIDTH + 2 * Block.BLOCK_MARGIN);  // 16
-    static final public int MAP_GRID_HEIGHT = MAP_HEIGHT / (Block.BLOCK_HEIGHT + 2 * Block.BLOCK_MARGIN); //35
+    static final public int MAP_HEIGHT = GameFXApp.WINDOW_HEIGHT - MAP_TOP_BOUNDARY; // 630
+    static final public int MAP_GRID_WIDTH = MAP_WIDTH / (Block.BLOCK_WIDTH + 2 * Block.BLOCK_MARGIN);  // 640 / 16 = 40
+    static final public int MAP_GRID_HEIGHT = MAP_HEIGHT / (Block.BLOCK_HEIGHT + 2 * Block.BLOCK_MARGIN); // 665 / 35 = 19
 
     protected ArrayList<Block> blocks;
     protected Tile[][] grid;
@@ -70,7 +71,7 @@ public class Map {
                     // this code takes into account 1 additional byte for line brake in txt file
                     Block b = new Block(this, 
                         ((i - i / (MAP_GRID_WIDTH + 1)) % MAP_GRID_WIDTH) * (Block.BLOCK_WIDTH + 2 * Block.BLOCK_MARGIN) + 1, 
-                        ((i - i / (MAP_GRID_WIDTH + 1)) / MAP_GRID_WIDTH) * (Block.BLOCK_HEIGHT + 2 * Block.BLOCK_MARGIN) + 1);
+                        ((i - i / (MAP_GRID_WIDTH + 1)) / MAP_GRID_WIDTH) * (Block.BLOCK_HEIGHT + 2 * Block.BLOCK_MARGIN) + 1 + MAP_TOP_BOUNDARY);
                     
                     blocks.add(b);            
                 }

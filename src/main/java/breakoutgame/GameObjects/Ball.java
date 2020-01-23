@@ -1,5 +1,8 @@
 package main.java.breakoutgame.GameObjects;
 
+import main.java.breakoutgame.GameHelpers.Vector2D;
+
+import main.java.breakoutgame.GameFXApp;
 import main.java.breakoutgame.GameHelpers.DynamicGameObject;
 import main.java.breakoutgame.GameHelpers.Collision;
 
@@ -20,14 +23,15 @@ import javafx.scene.paint.Color;
 public class Ball extends DynamicGameObject {
     public static final int INIT_BALL_SIZE = 16;
     public int starting = 0;
+    private Vector2D lastMousePosition;
 
     Color currentColor;
 
-    public Ball(Map root, double InitX, double InitY, boolean mouseControllEnabled) {
-        super(root, InitX, InitY, INIT_BALL_SIZE, INIT_BALL_SIZE);
+    public Ball(Map map, double InitX, double InitY) {
+        super(map, InitX, InitY, INIT_BALL_SIZE, INIT_BALL_SIZE);
         currentColor = Color.YELLOW;
-        if (mouseControllEnabled) {
-            mouseControll(root.gc.getCanvas().getScene());
+        if (GameFXApp.DEBUG_MODE) {
+            mouseControl(map.gc.getCanvas().getScene());
         }
         reset();
     }
@@ -95,7 +99,7 @@ public class Ball extends DynamicGameObject {
     }
 
     // EXTRA ################
-    private void mouseControll(Scene scene) {
+    private void mouseControl(Scene scene) {
         scene.addEventFilter(MouseEvent.MOUSE_DRAGGED , mouseEvent -> {
             velocity.x = velocity.y = 0;
             move(mouseEvent.getSceneX() - position.x - width / 2, mouseEvent.getSceneY() - position.y - height / 2);
@@ -103,13 +107,18 @@ public class Ball extends DynamicGameObject {
 
         scene.addEventFilter(MouseEvent.MOUSE_PRESSED , mouseEvent -> {
             velocity.x = velocity.y = 0;
+            lastMousePosition = new Vector2D(mouseEvent.getSceneX(), mouseEvent.getSceneY());
             move(mouseEvent.getSceneX() - position.x - width / 2, mouseEvent.getSceneY() - position.y - height / 2);
         });
 
         scene.addEventFilter(MouseEvent.MOUSE_RELEASED , mouseEvent -> {
-            velocity.y = -4;
-            velocity.x = 0;
+            velocity = new Vector2D(mouseEvent.getSceneX(), mouseEvent.getSceneY()).sub(lastMousePosition).normalize().mult(3);
         });
+    }
+
+    @Override
+    public String log() {
+        return null;
     }
     //####################
 }

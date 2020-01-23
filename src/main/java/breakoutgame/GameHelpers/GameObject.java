@@ -125,7 +125,7 @@ public abstract class GameObject implements Loggable{
     }
 
     public String log() {
-        return "Position: " + position.toString() + '\n' +
+        return  "Position: " + position.toString() + '\n' +
                 "Width, height: " + width + '\t' + height + '\n';
     }
 }

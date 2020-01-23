@@ -10,13 +10,13 @@ public class Block extends GameObject {
     public static final int BLOCK_HEIGHT = 20 - 2 * BLOCK_MARGIN;
 
 
-    public Block(Map root, double x, double y) {
-        super(root, x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
+    public Block(Map map, double x, double y) {
+        super(map, x, y, BLOCK_WIDTH, BLOCK_HEIGHT);
     }
 
     @Override
     public void draw() {
-        map.gc.setFill(Color.RED);
+        map.gc.setFill(Color.PURPLE);
         map.gc.fillRect(position.x + BLOCK_MARGIN, position.y + BLOCK_MARGIN,
             BLOCK_WIDTH, BLOCK_HEIGHT);
     }

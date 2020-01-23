@@ -12,10 +12,10 @@ public abstract class DynamicGameObject extends GameObject {
     protected Vector2D initPosition;
     protected Vector2D velocity;
 
-    public DynamicGameObject(Map root, double x, double y, double w, double h) {
-        super(root, x, y, w, h);
+    public DynamicGameObject(Map map, double x, double y, double w, double h) {
+        super(map, x, y, w, h);
         initPosition = new Vector2D(x, y);
-        velocity = new Vector2D(0, 0);      // initially velosity = 0
+        velocity = new Vector2D(0, 0);      // initial velosity = 0
     }
 
     public Vector2D getVelocity() {
@@ -54,7 +54,7 @@ public abstract class DynamicGameObject extends GameObject {
         return move(shift.x, shift.y);
     }
 
-    // IMPORTANT: allways use this to move any object
+    // IMPORTANT: always use this to move any object
     protected Collision move(double newX, double newY) {
         // IMPORTANT: first check for collisions then boundary check to be able to rewind move() step
 
@@ -104,6 +104,7 @@ public abstract class DynamicGameObject extends GameObject {
         // returning it in order to let the objects handle different types themselves
 
         removeFromGrid();
+
         if (right() >= backgroundWidth) {
             position.x = backgroundWidth - (width + 1);
             output = new Collision(Type.RIGHT_BOUND);
@@ -117,8 +118,8 @@ public abstract class DynamicGameObject extends GameObject {
             position.y = backgroundHeight - (height + 1);
             output = new Collision(Type.BOTTOM_BOUND);
         }
-        else if (top() < 0) {
-            position.y = 0;
+        else if (top() < Map.MAP_TOP_BOUNDARY) {
+            position.y = Map.MAP_TOP_BOUNDARY;
             output = new Collision(Type.TOP_BOUND);
         }
         updateGrid();
@@ -127,13 +128,13 @@ public abstract class DynamicGameObject extends GameObject {
     }
 
     protected void getOutOfCollision(GameObject[] objColliding) {
-        if (velocity.x >= 0 && velocity.y > 0) {
+        if (velocity.x >= 0 && velocity.y > 0) {    // =>v  obj is moving right and down
             Vector2D prevPosRightBotCorner = new Vector2D(position).sub(velocity).add(width, height); // go back to the state  before collision
 
-            double closestDist = prevPosRightBotCorner.distance(objColliding[0].topLeftCorner());
-            GameObject closestObj = objColliding[0];
+            double closestDist = prevPosRightBotCorner.distance(objColliding[0].topLeftCorner());   // calc dist between right bot corner of moving and top left of collided[0]
+            GameObject closestObj = objColliding[0];    // set initially collided[0] as closes collided
 
-            for (GameObject obj : objColliding) {
+            for (GameObject obj : objColliding) {   // compare each obj in a given tile and find the closest one aka first collided
                 double tempDist = prevPosRightBotCorner.distance(obj.topLeftCorner());
                 if (tempDist < closestDist) {
                     closestDist = tempDist;
@@ -141,16 +142,18 @@ public abstract class DynamicGameObject extends GameObject {
                 }
             }
 
-            Edge top = new Edge(closestObj.topLeftCorner(), closestObj.topRightCorner());
-            Edge left = new Edge(closestObj.botLeftCorner(), closestObj.topLeftCorner());
-            Edge movePath = new Edge(prevPosRightBotCorner, botRightCorner());
+            Edge top = new Edge(closestObj.topLeftCorner(), closestObj.topRightCorner());   // find the line/edge at the y of collision
+            Edge left = new Edge(closestObj.botLeftCorner(), closestObj.topLeftCorner());   // find the line/edge at the x of collision
+            Edge movePath = new Edge(prevPosRightBotCorner, botRightCorner()); // find the path of movement for the collision facing vertex
 
-            Vector2D collisionPoint = movePath.isCrossing(top);
+            Vector2D collisionPoint = movePath.isCrossing(top); // calc collision point between movement path and horizontal boundary of collided
 
             if (collisionPoint == null) {
-                collisionPoint = movePath.isCrossing(left);
-                if (collisionPoint == null && GameFXApp.DEBUG_MODE) {
-                    System.out.println("Getting out of collision that doesnt exist!");
+                collisionPoint = movePath.isCrossing(left); // if no collision occurred try to calc the point for vertical boundary
+                if (collisionPoint == null) {   // if there was no collision detected sth went wrong
+                    if(GameFXApp.DEBUG_MODE) {
+                        System.out.println("Getting out of collision that doesnt exist!");
+                    }
                 }
                 else {
                     collisionPoint.x = (int)collisionPoint.x;
@@ -188,8 +191,10 @@ public abstract class DynamicGameObject extends GameObject {
 
             if (collisionPoint == null) {
                 collisionPoint = movePath.isCrossing(right);
-                if (collisionPoint == null && GameFXApp.DEBUG_MODE) {
-                    System.out.println("Getting out of collision that doesnt exist!");
+                if (collisionPoint == null) {
+                    if(GameFXApp.DEBUG_MODE) {
+                        System.out.println("Getting out of collision that doesnt exist!");
+                    }
                 }
                 else {
                     collisionPoint.x = (int)collisionPoint.x;
@@ -227,8 +232,10 @@ public abstract class DynamicGameObject extends GameObject {
 
             if (collisionPoint == null) {
                 collisionPoint = movePath.isCrossing(right);
-                if (collisionPoint == null && GameFXApp.DEBUG_MODE) {
-                    System.out.println("Getting out of collision that doesnt exist!");
+                if (collisionPoint == null) {
+                    if(GameFXApp.DEBUG_MODE) {
+                        System.out.println("Getting out of collision that doesnt exist!");
+                    }
                 }
                 else {
                     collisionPoint.x = (int)collisionPoint.x;
@@ -266,8 +273,10 @@ public abstract class DynamicGameObject extends GameObject {
 
             if (collisionPoint == null) {
                 collisionPoint = movePath.isCrossing(left);
-                if (collisionPoint == null && GameFXApp.DEBUG_MODE) {
-                    System.out.println("Getting out of collision that doesnt exist!");
+                if (collisionPoint == null) {
+                    if(GameFXApp.DEBUG_MODE) {
+                        System.out.println("Getting out of collision that doesnt exist!");
+                    }
                 }
                 else {
                     collisionPoint.x = (int)collisionPoint.x;

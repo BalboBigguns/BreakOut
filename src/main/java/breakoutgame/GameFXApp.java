@@ -1,5 +1,9 @@
 package main.java.breakoutgame;
 
+import javafx.animation.Animation;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Font;
 import main.java.breakoutgame.GameObjects.GameManager;
 
 import javafx.application.Application;
@@ -14,7 +18,8 @@ import javafx.scene.canvas.Canvas;
 public class GameFXApp extends Application {
     public static final int WINDOW_WIDTH = 640;
     public static final int WINDOW_HEIGHT = 700;
-    public static final boolean DEBUG_MODE = true;
+
+    public static final boolean DEBUG_MODE = false;  // turns on debug logs and allows for game pause and manual ball manipulations
 
     StackPane root;
     Canvas canvas;
@@ -31,13 +36,10 @@ public class GameFXApp extends Application {
         root.getChildren().add(canvas);
         
         gameScene = new Scene(root);
-
-
-
         primaryStage.setScene(gameScene);
 
 
-        gameManager = new GameManager(root);
+        gameManager = new GameManager(gameScene);
         gameManager.startGameLoop();
 
         primaryStage.show();

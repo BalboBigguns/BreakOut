@@ -63,8 +63,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1WgBb0X4dPgzqMCKNnRLfBqwGwv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -88,7 +92,13 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michał\Desktop\Repos\Java\Breakout\src\main\resources\Fonts" />
+      <recent name="C:\Users\Michał\Desktop\Repos\Java\Breakout\src\main\java\breakoutgame" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -225,7 +235,8 @@
       <workItem from="1579652139373" duration="871000" />
       <workItem from="1579653054301" duration="320000" />
       <workItem from="1579653459324" duration="13000" />
-      <workItem from="1579653494991" duration="7315000" />
+      <workItem from="1579653494991" duration="8009000" />
+      <workItem from="1579700247719" duration="15990000" />
     </task>
     <servers />
   </component>
@@ -237,42 +248,66 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="26" key="#Notifications" timestamp="1579700163950">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="26" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1579700163950" />
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579693246378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1579693246378" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1579622317773">
+    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579703762426">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579622317773" />
+    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1579703762426" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1579737931840">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579737931840" />
     <state x="412" y="155" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579693244099">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="155" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1579693244099" />
-    <state x="458" y="219" key="FileChooserDialogImpl" timestamp="1579653839261">
+    <state x="458" y="219" key="FileChooserDialogImpl" timestamp="1579700382183">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="458" y="219" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1579653839261" />
-    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1579698458459">
+    <state x="458" y="219" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1579700382183" />
+    <state width="1323" height="43" key="GridCell.Tab.0.bottom" timestamp="1579739257203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579698458459" />
-    <state width="1323" height="2" key="GridCell.Tab.0.center" timestamp="1579698458459">
+    <state width="1323" height="43" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579739257203" />
+    <state width="1323" height="43" key="GridCell.Tab.0.center" timestamp="1579739257202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579698458459" />
-    <state width="1323" height="2" key="GridCell.Tab.0.left" timestamp="1579698458459">
+    <state width="1323" height="43" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579739257202" />
+    <state width="1323" height="43" key="GridCell.Tab.0.left" timestamp="1579739257202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579698458458" />
-    <state width="1323" height="2" key="GridCell.Tab.0.right" timestamp="1579698458459">
+    <state width="1323" height="43" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579739257202" />
+    <state width="1323" height="43" key="GridCell.Tab.0.right" timestamp="1579739257203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579698458459" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1579653852800">
+    <state width="1323" height="43" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579739257203" />
+    <state width="1323" height="143" key="GridCell.Tab.1.bottom" timestamp="1579735831586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579653852800" />
+    <state width="1323" height="143" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579735831586" />
+    <state width="1323" height="143" key="GridCell.Tab.1.center" timestamp="1579735831586">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="143" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1579735831586" />
+    <state width="1323" height="143" key="GridCell.Tab.1.left" timestamp="1579735831586">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="143" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1579735831586" />
+    <state width="1323" height="143" key="GridCell.Tab.1.right" timestamp="1579735831586">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="143" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1579735831586" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1579700395898">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579700395898" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579653058469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -281,6 +316,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="586" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1579649507715" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Bat.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

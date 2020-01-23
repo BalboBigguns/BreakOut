@@ -13,8 +13,8 @@ public class Bat extends DynamicGameObject {
     static final protected double INIT_WIDTH = 70;
     static final protected double INIT_HEIGHT = 10;
 
-    public Bat(Map root, double xInit, double yInit) {
-        super(root, xInit, yInit, INIT_WIDTH, INIT_HEIGHT);
+    public Bat(Map map, double xInit, double yInit) {
+        super(map, xInit, yInit, INIT_WIDTH, INIT_HEIGHT);
         setKeyResponse(map.gc.getCanvas().getScene());
     }
 

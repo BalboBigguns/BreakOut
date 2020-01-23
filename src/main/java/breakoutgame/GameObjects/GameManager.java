@@ -1,6 +1,8 @@
 package main.java.breakoutgame.GameObjects;
 
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.FontWeight;
 import main.java.breakoutgame.Utils.Logger;
 
 import javafx.scene.canvas.Canvas;
@@ -24,12 +26,14 @@ public class GameManager {
     Bat bat;
     Ball ball;
     StackPane rootPane;
+    Scene gameScene;
     Canvas canvas;
     GraphicsContext gc;
     Timeline timeline;
 
-    public GameManager(StackPane rootPane) {
-        this.rootPane = rootPane;
+    public GameManager(Scene gameScene) {
+        this.gameScene = gameScene;
+        this.rootPane = (StackPane) gameScene.getRoot();;
         this.canvas = (Canvas)rootPane.getChildren().get(0);
         this.gc = canvas.getGraphicsContext2D();
         map = new Map(gc);
@@ -40,16 +44,9 @@ public class GameManager {
         }
 
         bat = new Bat(map, canvas.getWidth() / 2 - Bat.INIT_WIDTH / 2 , canvas.getHeight() - Bat.INIT_HEIGHT * 2);
-        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2, 550, GameFXApp.DEBUG_MODE);
+        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2, 600);
 
-        //debugging stuff
-
-    }
-
-    public void startGameLoop() {
-        int gameRate = GameFXApp.DEBUG_MODE ? 500 : 20;
-
-        timeline = new Timeline(new KeyFrame(Duration.millis(gameRate), new EventHandler<ActionEvent>() {
+        timeline = new Timeline(new KeyFrame(Duration.millis(20), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent t) {
                 bat.update();
@@ -58,16 +55,23 @@ public class GameManager {
                 endGameCheck();
 
                 // here goes all of the drawing methods
-                gc.setFill(Color.GREEN);
-                gc.setFont(new Font(20));
-                gc.fillText(String.valueOf(map.lives), 10, 20);
+                drawHud();
                 bat.draw();
                 map.drawBlocks();
                 ball.draw();
 
             }
         }));
+
         timeline.setCycleCount(Timeline.INDEFINITE);
+
+        //debugging stuff
+        if (GameFXApp.DEBUG_MODE) {
+            checkDebugModeOn();
+        }
+    }
+
+    public void startGameLoop() {
         timeline.play();
     }
 
@@ -77,7 +81,7 @@ public class GameManager {
         // List of traced objects
         logger.addObjectToTrack(ball);
 
-        canvas.addEventFilter(KeyEvent.KEY_PRESSED, keyEvent -> {
+        gameScene.addEventFilter(KeyEvent.KEY_PRESSED, keyEvent -> {
             KeyCode key = keyEvent.getCode();
 
             if (key == KeyCode.SPACE) {
@@ -90,6 +94,16 @@ public class GameManager {
             }
         });
 
+    }
+
+    // game hud
+    private void drawHud() {
+        gc.setFill(Color.rgb(0, 204, 204));
+        gc.fillRect(0 ,0, GameFXApp.WINDOW_WIDTH, Map.MAP_TOP_BOUNDARY);
+
+        gc.setFill(Color.PURPLE);
+        gc.setFont(Font.font("Agency FB", FontWeight.BOLD, 24));
+        gc.fillText(String.valueOf(map.lives) + " UP", 18, 26);
     }
 
     // probably can be optimized

@@ -34,9 +34,10 @@ public class Vector2D {
         return this;
     }
 
-    public void mult(double m) {
+    public Vector2D mult(double m) {
         x *= m; 
         y *= m;
+        return this;
     }
 
     public double length() {
@@ -55,8 +56,10 @@ public class Vector2D {
     }
 
     public Vector2D normalize() {
-        x /= length();
-        y /= length();
+        if (length() != 0) {
+            x /= length();
+            y /= length();
+        }
         return this;
     }
 
