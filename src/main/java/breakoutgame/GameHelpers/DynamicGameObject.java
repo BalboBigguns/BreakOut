@@ -54,6 +54,10 @@ public abstract class DynamicGameObject extends GameObject {
         return move(shift.x, shift.y);
     }
 
+    /* UNSERVED CASES OF COLLISIONS:
+        # "jumping" over another object in case of too big speed or passing the vertices through each other
+        # ???collision with more than one object at the time
+     */
     // IMPORTANT: always use this to move any object
     protected Collision move(double newX, double newY) {
         // IMPORTANT: first check for collisions then boundary check to be able to rewind move() step
@@ -68,16 +72,23 @@ public abstract class DynamicGameObject extends GameObject {
         // Loading the obj back to the grid
         updateGrid();
 
+        // Creating variable to store the output of collision detection
         Collision output = new Collision(Type.NONE);
 
-
+        // Getting array of all the tiles DynamicGameObject currently occupies
         Tile[] currentTiles = getTiles();
+
+        // Creating variable to store the ArrayList of all the colliding GameObjects
         ArrayList<GameObject> collidingObjects = new ArrayList<GameObject>(); 
 
+        // Iterating over all the tiles occupied by this object at the moment
         for (Tile t : currentTiles) {
+            // Checking if the tile is not empty
             if (t.isOccupied()) {
+                // Checking if Objects in non empty tile actually collide with this Object
                 for (GameObject obj : t.storedObjects) {
                     if (isCollided(obj)) {
+                        // Checking the type of collided Object
                         if (obj instanceof Block) {
                             collidingObjects.add(obj);
                             if (output.type == Type.NONE) {
@@ -90,12 +101,15 @@ public abstract class DynamicGameObject extends GameObject {
                                 output = new Collision(obj);
                             }
                         }
+                        else {
+                            System.out.println("Collision with unknown object:" + obj.getClass().getSimpleName());
+                        }
                     }
                 }
             }
         }
 
-        
+        // If collision check return non empty ArrayList, getOutOfCollision algorithm must be performed for each colliding Object
         if (!collidingObjects.isEmpty()) {
             removeFromGrid();
             getOutOfCollision(collidingObjects.toArray(GameObject[]::new));
@@ -104,7 +118,7 @@ public abstract class DynamicGameObject extends GameObject {
 
         
         // split this part into calculating the type of collision and 
-        // returning it in order to let the objects handle different types themselves
+        // returning it in order to let the objects handle different types of collisions themselves
 
         removeFromGrid();
 
@@ -137,6 +151,7 @@ public abstract class DynamicGameObject extends GameObject {
             double closestDist = prevPosRightBotCorner.distance(objColliding[0].topLeftCorner());   // calc dist between right bot corner of moving and top left of collided[0]
             GameObject closestObj = objColliding[0];    // set initially collided[0] as closes collided
 
+            // TODO: this part probably needs rework ( its not a good idea to check against one corner only, consider dist from edges too)
             for (GameObject obj : objColliding) {   // compare each obj in a given tile and find the closest one aka first collided
                 double tempDist = prevPosRightBotCorner.distance(obj.topLeftCorner());
                 if (tempDist < closestDist) {

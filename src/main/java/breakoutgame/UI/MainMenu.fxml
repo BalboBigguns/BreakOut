@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.MainMenuController">
+   <Label text="BREAKOUT">
+      <VBox.margin>
+         <Insets bottom="50.0" />
+      </VBox.margin>
+      <font>
+         <Font name="Agency FB" size="120.0" />
+      </font>
+   </Label>
+   <Button mnemonicParsing="false" onMouseClicked="#onStartButtonPress" prefHeight="50.0" prefWidth="300.0" text="START">
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font></Button>
+   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onCreditsButtonPress" prefHeight="50.0" prefWidth="300.0" text="CREDITS">
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font>
+   </Button>
+   <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#onQuitButtonPress" prefHeight="50.0" prefWidth="300.0" text="QUIT">
+      <VBox.margin>
+         <Insets bottom="10.0" top="10.0" />
+      </VBox.margin>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font>
+   </Button>
+</VBox>

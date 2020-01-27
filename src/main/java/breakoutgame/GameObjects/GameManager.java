@@ -1,6 +1,7 @@
 package main.java.breakoutgame.GameObjects;
 
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.FontWeight;
 import main.java.breakoutgame.Utils.Logger;
@@ -31,10 +32,10 @@ public class GameManager {
     GraphicsContext gc;
     Timeline timeline;
 
-    public GameManager(Scene gameScene) {
-        this.gameScene = gameScene;
-        this.rootPane = (StackPane) gameScene.getRoot();;
-        this.canvas = (Canvas)rootPane.getChildren().get(0);
+    public GameManager() {
+        this.canvas = new Canvas(GameFXApp.WINDOW_WIDTH, GameFXApp.WINDOW_HEIGHT);
+        this.rootPane = new StackPane(canvas);
+        this.gameScene = new Scene(rootPane);
         this.gc = canvas.getGraphicsContext2D();
         map = new Map(gc);
 
@@ -46,7 +47,7 @@ public class GameManager {
         bat = new Bat(map, canvas.getWidth() / 2 - Bat.INIT_WIDTH / 2 , canvas.getHeight() - Bat.INIT_HEIGHT * 2);
         ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2, 600);
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(20), new EventHandler<ActionEvent>() {
+        timeline = new Timeline(new KeyFrame(Duration.millis(20), new EventHandler<>() {
             @Override
             public void handle(ActionEvent t) {
                 bat.update();
@@ -71,9 +72,15 @@ public class GameManager {
         }
     }
 
+    public Pane getView() {return rootPane;}
+
+    public Scene getScene() {return gameScene;}
+
     public void startGameLoop() {
         timeline.play();
     }
+
+    public void pauseGameLoop() { timeline.stop();}
 
     private void checkDebugModeOn() {
         Logger logger = new Logger(timeline, 500);

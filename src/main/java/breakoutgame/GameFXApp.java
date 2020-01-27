@@ -1,18 +1,12 @@
 package main.java.breakoutgame;
 
-import javafx.animation.Animation;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Font;
 import main.java.breakoutgame.GameObjects.GameManager;
+import main.java.breakoutgame.UI.MainMenuController;
 
-import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.application.Application;
 import javafx.stage.Stage;
-
-// drawing inmports
-import javafx.scene.canvas.Canvas;
 
 
 public class GameFXApp extends Application {
@@ -21,26 +15,26 @@ public class GameFXApp extends Application {
 
     public static final boolean DEBUG_MODE = true;  // turns on debug logs and allows for game pause and manual ball manipulations
 
-    StackPane root;
-    Canvas canvas;
-    Scene gameScene, menuScene;
+    Scene menu;
     GameManager gameManager;
 
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Breakout");
 
-        root = new StackPane();
+        try {
+            menu = new Scene(FXMLLoader.load(getClass().getResource("UI/MainMenu.fxml")));
+        } catch (Exception e) {
+            System.out.println("Fxml file loading error: " + e.getMessage());
+        }
+        primaryStage.setScene(menu);
 
-        canvas = new Canvas(WINDOW_WIDTH, WINDOW_HEIGHT);
-        root.getChildren().add(canvas);
-        
-        gameScene = new Scene(root);
-        primaryStage.setScene(gameScene);
+        gameManager = new GameManager();
 
-
-        gameManager = new GameManager(gameScene);
-        gameManager.startGameLoop();
+        MainMenuController.startTheGame = actionEvent -> {
+            gameManager.startGameLoop();
+            primaryStage.setScene(gameManager.getScene());
+        };
 
         primaryStage.show();
     }
@@ -48,5 +42,6 @@ public class GameFXApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 
 }
