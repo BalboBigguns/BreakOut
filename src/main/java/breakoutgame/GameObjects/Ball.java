@@ -73,17 +73,20 @@ public class Ball extends DynamicGameObject {
     }
 
     private void resetAnimation() {
+        Color active = Color.web("#F1C40F");
+        Color inActive = Color.web("#666666");
+
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), t -> {
             if (starting++ < 6) {
-                if (currentColor == Color.YELLOW ) {
-                    currentColor = Color.GREY;
+                if (currentColor == active ) {
+                    currentColor = inActive;
                 }
                 else {
-                    currentColor = Color.YELLOW;
+                    currentColor = active;
                 }
             }
             else {
-                currentColor = Color.YELLOW;
+                currentColor = active;
                 starting = 0;
                 velocity.y = -4;
                 velocity.x = 6;

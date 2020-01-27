@@ -16,7 +16,7 @@ public class Block extends GameObject {
 
     @Override
     public void draw() {
-        map.gc.setFill(Color.PURPLE);
+        map.gc.setFill(Color.web("#9b59b6"));
         map.gc.fillRect(position.x + BLOCK_MARGIN, position.y + BLOCK_MARGIN,
             BLOCK_WIDTH, BLOCK_HEIGHT);
     }

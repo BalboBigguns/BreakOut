@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="700.0" prefWidth="640.0" stylesheets="@stylesMenu.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.MainMenuController">
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="640.0" stylesheets="@styleButtons.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.MainMenuController">
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
          <Label alignment="TOP_CENTER" text="BREAKOUT">
@@ -18,12 +18,10 @@
             </HBox.margin>
          </Label>
          <ImageView fitHeight="110.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../../../resources/Icon/IconOpac.png" />
-            </image>
             <HBox.margin>
-               <Insets left="10.0" />
+               <Insets left="10.0"/>
             </HBox.margin>
+            <Image url="@../../../resources/Icon/IconOpac.png"/>
          </ImageView>
       </children>
    </HBox>
