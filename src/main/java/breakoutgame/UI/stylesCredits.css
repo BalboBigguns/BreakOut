@@ -1,0 +1,18 @@
+.button {
+    -fx-background-color: #00CCCC;
+}
+
+.button:hover {
+    -fx-background-color: #00e6e6;
+}
+
+.text-area .content{
+    -fx-background-color: #f4f4f4;
+
+}
+
+.text-area {
+    -fx-border-color: #f4f4f4;
+    -fx-font-size: 25;
+    -fx-font-family: "Agency FB";
+}

@@ -14,7 +14,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class Map {
     static final public int MAP_TOP_BOUNDARY = Block.BLOCK_HEIGHT * 2;
     static final public int MAP_WIDTH = GameFXApp.WINDOW_WIDTH; // 640
-    static final public int MAP_HEIGHT = GameFXApp.WINDOW_HEIGHT - MAP_TOP_BOUNDARY; // 630
+    static final public int MAP_HEIGHT = GameFXApp.WINDOW_HEIGHT; //- MAP_TOP_BOUNDARY; // 630
     static final public int MAP_GRID_WIDTH = MAP_WIDTH / (Block.BLOCK_WIDTH + 2 * Block.BLOCK_MARGIN);  // 640 / 16 = 40
     static final public int MAP_GRID_HEIGHT = MAP_HEIGHT / (Block.BLOCK_HEIGHT + 2 * Block.BLOCK_MARGIN); // 665 / 35 = 19
 

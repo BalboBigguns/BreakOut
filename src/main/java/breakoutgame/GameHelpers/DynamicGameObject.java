@@ -1,6 +1,7 @@
 package main.java.breakoutgame.GameHelpers;
 
 import main.java.breakoutgame.GameFXApp;
+import main.java.breakoutgame.GameObjects.Ball;
 import main.java.breakoutgame.GameObjects.Map;
 import main.java.breakoutgame.GameObjects.Bat;
 import main.java.breakoutgame.GameObjects.Block;
@@ -87,7 +88,7 @@ public abstract class DynamicGameObject extends GameObject {
             if (t.isOccupied()) {
                 // Checking if Objects in non empty tile actually collide with this Object
                 for (GameObject obj : t.storedObjects) {
-                    if (isCollided(obj)) {
+                    if (isCollided(obj) && !(obj instanceof Ball)) {
                         // Checking the type of collided Object
                         if (obj instanceof Block) {
                             collidingObjects.add(obj);
@@ -102,7 +103,9 @@ public abstract class DynamicGameObject extends GameObject {
                             }
                         }
                         else {
-                            System.out.println("Collision with unknown object:" + obj.getClass().getSimpleName());
+                            if (!GameFXApp.DEBUG_MODE) {
+                                System.out.println("From: " + getClass().getSimpleName() + " -> Collision with unknown object:" + obj.getClass().getSimpleName());
+                            }
                         }
                     }
                 }

@@ -1,5 +1,6 @@
 package main.java.breakoutgame;
 
+import javafx.scene.image.Image;
 import main.java.breakoutgame.GameObjects.GameManager;
 import main.java.breakoutgame.UI.MainMenuController;
 
@@ -13,7 +14,7 @@ public class GameFXApp extends Application {
     public static final int WINDOW_WIDTH = 640;
     public static final int WINDOW_HEIGHT = 700;
 
-    public static final boolean DEBUG_MODE = true;  // turns on debug logs and allows for game pause and manual ball manipulations
+    public static final boolean DEBUG_MODE = false;  // turns on debug logs and allows for game pause and manual ball manipulations
 
     Scene menu;
     GameManager gameManager;
@@ -21,6 +22,7 @@ public class GameFXApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Breakout");
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("IconWhite.png" )));
 
         try {
             menu = new Scene(FXMLLoader.load(getClass().getResource("UI/MainMenu.fxml")));

@@ -10,9 +10,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 import javafx.scene.paint.Color;
 
 // extra for debugging
@@ -67,31 +64,29 @@ public class Ball extends DynamicGameObject {
                 map.hitBlock((Block)collision.getObjCollided());
                 break;
             case BAT:
+                // TODO: play sound
                 break;
             default:
-                System.out.println("Ball: Unserved type of collision occured: " + collision.getType());
+                if (GameFXApp.DEBUG_MODE) {System.out.println("Ball: Unserved type of collision occured: " + collision.getType());}
                 break;
         }
     }
 
     private void resetAnimation() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent t) {
-                if (starting++ < 6) {
-                    if (currentColor == Color.YELLOW ) {
-                        currentColor = Color.GREY;
-                    }
-                    else {
-                        currentColor = Color.YELLOW;
-                    }
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), t -> {
+            if (starting++ < 6) {
+                if (currentColor == Color.YELLOW ) {
+                    currentColor = Color.GREY;
                 }
                 else {
                     currentColor = Color.YELLOW;
-                    starting = 0;
-                    velocity.y = -4;
-                    velocity.x = 6;
                 }
+            }
+            else {
+                currentColor = Color.YELLOW;
+                starting = 0;
+                velocity.y = -4;
+                velocity.x = 6;
             }
         }));
         timeline.setCycleCount(7);

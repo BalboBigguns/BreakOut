@@ -4,16 +4,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane pickOnBounds="false" prefHeight="700.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.CreditsController">
-   <children>
-      <Button layoutX="170.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#onBackButtonPress" prefHeight="54.0" prefWidth="300.0" text="BACK">
-         <font>
-            <Font size="25.0" />
-         </font></Button>
-      <TextArea editable="false" focusTraversable="false" layoutX="71.0" layoutY="97.0" pickOnBounds="false" prefHeight="270.0" prefWidth="500.0" text="The Breakout game has been inspired by the original title from 1976. &#10;&#10;Enjoy my refreshed gameplay! &#10;&#10;&#10;&#10;Michal Okrasa 2020" wrapText="true">
-         <font>
-            <Font name="Agency FB" size="23.0" />
-         </font>
-      </TextArea>
-   </children>
+<AnchorPane pickOnBounds="false"
+            prefHeight="700.0"
+            prefWidth="640.0"
+            xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.breakoutgame.UI.CreditsController"
+            stylesheets="@stylesCredits.css">
+   <Button layoutX="170.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#onBackButtonPress" prefHeight="54.0"
+           prefWidth="300.0" text="BACK">
+      <font>
+         <Font size="25.0"/>
+      </font>
+   </Button>
+   <TextArea editable="false" focusTraversable="false" layoutX="71.0" layoutY="97.0" pickOnBounds="false"
+             prefHeight="270.0" prefWidth="500.0"
+             text="The Breakout game has been inspired by the original title from 1976. &#10;&#10;Enjoy my refreshed gameplay! &#10;&#10;&#10;&#10;Michal Okrasa 2020"
+             wrapText="true">
+   </TextArea>
 </AnchorPane>
