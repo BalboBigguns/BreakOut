@@ -48,19 +48,18 @@ public class GameManager {
         this.gc = canvas.getGraphicsContext2D();
         map = new Map(gc);
 
-        if (!map.loadBlocks("src/main/resources/LevelMaps/level_1.txt")) {
+        if (!map.loadBlocks(getClass().getResourceAsStream("/main/resources/LevelMaps/level_1.txt"))) {
             System.out.println("Level loading failed \nAborting game execution...");
             throw new RuntimeException("Level loading failed \nAborting game execution...");
         }
 
-        gameScene.getStylesheets().addAll(getClass().getResource("../UI/styleButtons.css").toExternalForm());
+        gameScene.getStylesheets().addAll(getClass().getResource("/main/java/breakoutgame/UI/styleButtons.css").toExternalForm());
 
         pauseButton = new ImageView();
-        pauseButton.setImage(new Image(getClass().getResourceAsStream("../../../resources/Icon/pauseImg.png"), 36, 36, false, false));
+        pauseButton.setImage(new Image(getClass().getResourceAsStream("/main/resources/Icon/pauseImg.png"), 36, 36, false, false));
         StackPane.setAlignment(pauseButton, Pos.TOP_RIGHT);
         rootPane.getChildren().add(pauseButton);
         pauseButton.setOnMouseClicked(mouseEvent -> {
-            System.out.println(timeline.getStatus().toString());
             if (timeline.getStatus() == Animation.Status.PAUSED) {
                 resumeGameLoop();
             }
@@ -105,7 +104,7 @@ public class GameManager {
 
     public void resumeGameLoop() {
         rootPane.getChildren().remove(pauseText);
-        pauseButton.setImage(new Image(getClass().getResourceAsStream("../../../resources/Icon/pauseImg.png"), 36, 36, false, false));
+        pauseButton.setImage(new Image(getClass().getResourceAsStream("/main/resources/Icon/pauseImg.png"), 36, 36, false, false));
 
         timeline.play();
     }
@@ -117,7 +116,7 @@ public class GameManager {
         pauseText.setFont(Font.font("Agency FB", FontWeight.BOLD, 84));
         rootPane.getChildren().add(pauseText);
 
-        pauseButton.setImage(new Image(getClass().getResourceAsStream("../../../resources/Icon/resumeImg.png"), 36, 36, false, false));
+        pauseButton.setImage(new Image(getClass().getResourceAsStream("/main/resources/Icon/resumeImg.png"), 36, 36, false, false));
     }
 
     private void checkDebugModeOn() {

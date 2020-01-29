@@ -43,16 +43,19 @@ public class Map {
         return grid;
     }
 
-    public boolean loadBlocks(String txtFilePath) {
-        FileInputStream in = null;
+    public boolean loadBlocks(InputStream txtFileInput) {
         byte[] bytes;
 
-        try {
-            in = new FileInputStream(txtFilePath);
-            bytes = in.readAllBytes();
-        } catch(IOException e) {
+        if (txtFileInput == null) {
             System.out.println("Wrong file to load!");
-            return false;
+            throw new NullPointerException();
+        }
+
+        try {
+            bytes = txtFileInput.readAllBytes();
+        } catch(Exception e) {
+            System.out.println("Error reading from file during loading!");
+            throw new NullPointerException();
         }
 
         int count = 0;
