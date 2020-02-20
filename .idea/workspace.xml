@@ -7,12 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Breakout_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Breakout.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Breakout.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameFXApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameFXApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Collision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/DynamicGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/DynamicGameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/Credits.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/Credits.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/CreditsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/CreditsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/CreditsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenuView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/styleButtons.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/styleButtons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/stylesCredits.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/stylesCredits.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/Utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/Utils/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fonts/RetroGaming.ttf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +284,9 @@
       <workItem from="1580306779188" duration="38000" />
       <workItem from="1580307302343" duration="591000" />
       <workItem from="1580308016348" duration="2198000" />
-      <workItem from="1580312315947" duration="8481000" />
+      <workItem from="1580312315947" duration="9135000" />
+      <workItem from="1580381553792" duration="4783000" />
+      <workItem from="1582203946859" duration="10907000" />
     </task>
     <servers />
   </component>
@@ -298,10 +310,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="23" width="1204" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1580313207706" />
-    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580147789832">
+    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580383632711">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1580147789832" />
+    <state x="424" y="175" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1580383632711" />
     <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1580153049873">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -326,38 +338,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="458" y="181" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580310215166" />
-    <state width="1323" height="98" key="GridCell.Tab.0.bottom" timestamp="1580320816077">
+    <state width="1323" height="246" key="GridCell.Tab.0.bottom" timestamp="1580387928595">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="98" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
-    <state width="1323" height="98" key="GridCell.Tab.0.center" timestamp="1580320816077">
+    <state width="1323" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580387928595" />
+    <state width="1323" height="246" key="GridCell.Tab.0.center" timestamp="1580387928594">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="98" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
-    <state width="1323" height="98" key="GridCell.Tab.0.left" timestamp="1580320816077">
+    <state width="1323" height="246" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580387928594" />
+    <state width="1323" height="246" key="GridCell.Tab.0.left" timestamp="1580387928594">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="98" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
-    <state width="1323" height="98" key="GridCell.Tab.0.right" timestamp="1580320816077">
+    <state width="1323" height="246" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580387928594" />
+    <state width="1323" height="246" key="GridCell.Tab.0.right" timestamp="1580387928595">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="98" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
-    <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1580314831555">
+    <state width="1323" height="246" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580387928595" />
+    <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1580328766202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580314831555" />
-    <state width="1323" height="253" key="GridCell.Tab.1.center" timestamp="1580314831554">
+    <state width="1323" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580328766202" />
+    <state width="1323" height="253" key="GridCell.Tab.1.center" timestamp="1580328766202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580314831554" />
-    <state width="1323" height="253" key="GridCell.Tab.1.left" timestamp="1580314831554">
+    <state width="1323" height="253" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580328766202" />
+    <state width="1323" height="253" key="GridCell.Tab.1.left" timestamp="1580328766202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580314831554" />
-    <state width="1323" height="253" key="GridCell.Tab.1.right" timestamp="1580314831555">
+    <state width="1323" height="253" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580328766202" />
+    <state width="1323" height="253" key="GridCell.Tab.1.right" timestamp="1580328766202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580314831555" />
+    <state width="1323" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580328766202" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1580313291286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -366,10 +378,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579653058469" />
-    <state x="390" y="0" width="607" height="728" key="find.popup" timestamp="1580320069751">
+    <state x="390" y="0" width="607" height="728" key="find.popup" timestamp="1582205366375">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1580320069751" />
+    <state x="390" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1582205366375" />
     <state x="65" y="0" key="new project wizard" timestamp="1580165093141">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

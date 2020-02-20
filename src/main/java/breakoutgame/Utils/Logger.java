@@ -14,8 +14,8 @@ public class Logger {
     private ArrayList<Loggable> TrackedObjects = new ArrayList<Loggable>();
 
     interface TimeStamp {
-        public void tick(int timeInterval);
-        public String print();
+        void tick(int timeInterval);
+        String print();
     }
 
     TimeStamp timeStamp = new TimeStamp() {

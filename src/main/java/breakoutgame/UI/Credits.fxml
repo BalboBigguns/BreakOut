@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane pickOnBounds="false"
-            prefHeight="700.0"
+            prefHeight="660.0"
             prefWidth="640.0"
             xmlns="http://javafx.com/javafx/10.0.2-internal"
             xmlns:fx="http://javafx.com/fxml/1"
