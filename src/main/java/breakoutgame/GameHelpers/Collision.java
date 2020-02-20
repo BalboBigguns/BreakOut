@@ -11,12 +11,23 @@ public class Collision {
     private Type type;
     private GameObject objCollided;
 
+    /**
+     * Constructor for Collisions object created with explicitly provided type.
+     * Property objCollided is initiated with null.
+     * @param t type to initiate the collision with
+     */
     public Collision(Type t) {
-        type = t;       
+        type = t;
+        objCollided = null;
     }
 
     // TODO: make it more versatile to manage all type of GameObjects and maybe store information about both of them
     //  to resolve collisions independently eg create list of all collisions managed by CollisionResolver or sth
+    /**
+     * Constructor for Collisions object created with explicitly provided object.
+     * Property type is initiated with proper type deduced from the type of provided object.
+     * @param obj GameObject instance to initiate the collision with
+     */
     public Collision(GameObject obj) {
         objCollided = obj;
         if (obj instanceof Block) {
@@ -27,7 +38,8 @@ public class Collision {
         }
         else {
             // TODO: refactor to better logging system
-            System.out.println("UNKNOWN COLLISION TYPE!!!");
+            System.out.println("UNKNOWN COLLISION TYPE!!! Update Collision class with more GameObject types.");
+            type = null;
         }
     }
 
