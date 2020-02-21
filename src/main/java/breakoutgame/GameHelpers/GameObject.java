@@ -2,6 +2,7 @@ package main.java.breakoutgame.GameHelpers;
 
 import main.java.breakoutgame.Utils.Loggable;
 import main.java.breakoutgame.GameObjects.Map;
+import main.java.breakoutgame.Utils.Logger;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -184,8 +185,7 @@ public abstract class GameObject implements Loggable {
                 }
             }
         } catch(ArrayIndexOutOfBoundsException e) {
-            System.out.println("this obj is broken: ");
-            System.out.println(this);
+            Logger.getGlobalInstance().printEvent("This obj got out of the tile map: " + this, Logger.LogType.ERROR);
             return null;
         }
 

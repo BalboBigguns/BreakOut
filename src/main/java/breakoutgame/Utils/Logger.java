@@ -119,7 +119,13 @@ public class Logger {
     }
 
     private void printError(String msg) {
-        logOutput.print(ANSI_RED + timeStamp.print() + "_ERROR: " + ANSI_RESET);
+        String fullClassName = Thread.currentThread().getStackTrace()[2].getClassName();
+        String className = fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+        String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+        int lineNumber = Thread.currentThread().getStackTrace()[2].getLineNumber();
+
+        logOutput.println(ANSI_RED + timeStamp.print() + "_ERROR in: ");
+        logOutput.println(className + "." + methodName + "():" + lineNumber + ANSI_RESET);
         logOutput.println(msg);
     }
 
