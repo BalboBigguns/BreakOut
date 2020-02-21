@@ -2,6 +2,7 @@ package main.java.breakoutgame.GameHelpers;
 
 import main.java.breakoutgame.GameObjects.Block;
 import main.java.breakoutgame.GameObjects.Bat;
+import main.java.breakoutgame.Utils.Logger;
 
 public class Collision {
     public enum Type {
@@ -37,8 +38,7 @@ public class Collision {
             type = Type.BAT;
         }
         else {
-            // TODO: refactor to better logging system
-            System.out.println("UNKNOWN COLLISION TYPE!!! Update Collision class with more GameObject types.");
+            Logger.getGlobalInstance().printEvent("UNKNOWN COLLISION TYPE!!! Update Collision class with more GameObject types.", Logger.LogType.ERROR);
             type = null;
         }
     }

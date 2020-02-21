@@ -68,23 +68,20 @@ public class GameManager {
         });
 
         bat = new Bat(map, canvas.getWidth() / 2 - Bat.INIT_WIDTH / 2 , canvas.getHeight() - Bat.INIT_HEIGHT * 2);
-        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2, 600);
+        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2.0, 600);
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(20), new EventHandler<>() {
-            @Override
-            public void handle(ActionEvent t) {
-                bat.update();
-                ball.update();
-                backgroundRefresh(gc);
-                endGameCheck();
+        timeline = new Timeline(new KeyFrame(Duration.millis(20), t -> {
+            bat.update();
+            ball.update();
+            backgroundRefresh(gc);
+            endGameCheck();
 
-                // here goes all of the drawing methods
-                drawHud();
-                bat.draw();
-                map.drawBlocks();
-                ball.draw();
+            // here goes all of the drawing methods
+            drawHud();
+            bat.draw();
+            map.drawBlocks();
+            ball.draw();
 
-            }
         }));
 
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -119,7 +116,8 @@ public class GameManager {
     }
 
     private void checkDebugModeOn() {
-        Logger logger = new Logger(timeline, 500);
+        Logger.createGlobalInstance(timeline);
+        Logger logger = Logger.getGlobalInstance();
 
         // List of traced objects
         logger.addObjectToTrack(ball);
