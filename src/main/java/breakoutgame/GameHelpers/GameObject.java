@@ -7,8 +7,16 @@ import main.java.breakoutgame.Utils.Logger;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+/**
+ * Basic abstract class for static (motionless) <code>GameObject</code>.
+ * <p>
+ * Implements {@link Loggable} interface and can be subject to {@link PropertyChangeListener} (observable).
+ * All the static objects in the game inherit from this class.
+ * @see DynamicGameObject
+ * @see PropertyChangeSupport
+ */
 public abstract class GameObject implements Loggable {
-    private final PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    protected final PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     private Vector2D position;
     private double width;
     private double height;
@@ -16,6 +24,14 @@ public abstract class GameObject implements Loggable {
     //  TODO: maybe encapsulate it
     protected Map map;
 
+    /**
+     * Constructor for <code>GameObject</code>.
+     * @param map reference to the map, this object is managed by (possibly deprecated)
+     * @param x initial x coordinate of this object
+     * @param y initial y coordinate of this object
+     * @param w width of this object
+     * @param h height of this object
+     */
     public GameObject(Map map, double x, double y, double w, double h) {
         this.map = map;
         width = w;
@@ -27,14 +43,33 @@ public abstract class GameObject implements Loggable {
     // Getters and setters
 
     /**
-     * Getter for the center position of the object.
-     * @return Vector2D of center position
+     * Gets the origin position of this object (top left corner).
+     * @return <code>Vector2D</code> of center position
      */
-    public Vector2D getPositionCenter() { return position.add(- width / 2, height / 2); }
+    public Vector2D getPosition() {
+        return new Vector2D(position);
+    }
 
     /**
-     * Setter for the center position of the object.
-     * @param position Vector2D of the new position
+     * Sets the origin position of this object (top left corner).
+     * @param position <code>Vector2D</code> of the new position
+     */
+    public void setPosition(Vector2D position) {
+        pcs.firePropertyChange("position", this.position, position);
+        this.position = position;
+    }
+
+    /**
+     * Gets the center position of this object.
+     * @return position <code>Vector2D</code> of center
+     */
+    public Vector2D getPositionCenter() {
+        return new Vector2D(position).add(- width / 2, height / 2);
+    }
+
+    /**
+     * Sets the center position of this object.
+     * @param position <code>Vector2D</code> of the new position
      */
     public void setPositionCenter(Vector2D position) {
         Vector2D oldValue = this.position;
@@ -43,14 +78,14 @@ public abstract class GameObject implements Loggable {
     }
 
     /**
-     * Getter for width of the object.
-     * @return width
+     * Gets the width of this object.
+     * @return <code>width</code> value
      */
     public double getWidth() { return width; }
 
     /**
-     * Setter for width of the object.
-     * @param width new width value
+     * Sets the width of this object.
+     * @param width new <code>width</code> value
      */
     public void setWidth(double width) {
         pcs.firePropertyChange("width", this.width, width);
@@ -58,14 +93,14 @@ public abstract class GameObject implements Loggable {
     }
 
     /**
-     * Getter for height of the object.
-     * @return height
+     * Gets the height of this object.
+     * @return <code>height</code> value
      */
     public double getHeight() { return height; }
 
     /**
-     * Setter for height of the object.
-     * @param height new height value
+     * Sets the height of this object.
+     * @param height new <code>height</code> value
      */
     public void setHeight(double height) {
         pcs.firePropertyChange("height", this.height, height);
@@ -73,90 +108,90 @@ public abstract class GameObject implements Loggable {
     }
 
     /**
-     * Getter for top boundary coordinate of the object.
-     * @return position of top edge of GameObject
+     * Gets the top boundary coordinate of this object.
+     * @return coordinate of the top edge
      */
-    public double getTop() { return position.y; }
+    public double getTop() { return position.getY(); }
 
     /**
-     * Setter for top boundary coordinate of the object.
-     * @param y of top edge of GameObject
+     * Sets the top boundary coordinate of this object.
+     * @param y coordinate of the top edge
      */
     public void setTop(double y) {
         Vector2D oldValue = position;
-        position.y = y;
+        position.setY(y);
         pcs.firePropertyChange("position", oldValue, position);
     }
 
     /**
-     * Getter for bottom boundary coordinate of the object.
-     * @return position of bottom edge of GameObject
+     * Gets the bottom boundary coordinate of this object.
+     * @return coordinate of the bottom edge
      */
-    public double getBot() { return position.y + height; }
+    public double getBot() { return position.getY() + height; }
 
     /**
-     * Setter for bot boundary coordinate of the object.
-     * @param y of bot edge of GameObject
+     * Sets the bottom boundary coordinate of this object.
+     * @param y coordinate of the bottom edge
      */
     public void setBot(double y) {
         Vector2D oldValue = position;
-        position.y = y - (height + 1);
+        position.setY(y - (height + 1));
         pcs.firePropertyChange("position", oldValue, position);
     }
 
     /**
-     * Getter for right boundary coordinate of the object.
-     * @return position of right edge of GameObject
+     * Gets the right boundary coordinate of this object.
+     * @return coordinate of the right edge
      */
-    public double getRight() { return position.x + width; }
+    public double getRight() { return position.getX() + width; }
 
     /**
-     * Setter for right boundary coordinate of the object.
-     * @param x of right edge of GameObject
+     * Sets the right boundary coordinate of this object.
+     * @param x coordinate of the right edge
      */
     public void setRight(double x) {
         Vector2D oldValue = position;
-        position.x = x - (width + 1);
+        position.setX(x - (width + 1));
         pcs.firePropertyChange("position", oldValue, position);
     }
 
     /**
-     * Getter for left boundary coordinate of the object.
-     * @return x coordinate of left edge of GameObject
+     * Gets the left boundary coordinate of this object.
+     * @return x coordinate of the left edge
      */
-    public double getLeft() { return position.x; }
+    public double getLeft() { return position.getX(); }
 
     /**
-     * Setter for left boundary coordinate of the object.
-     * @param x of left edge of GameObject
+     * Sets the left boundary coordinate of this object.
+     * @param x coordinate of the left edge
      */
     public void setLeft(double x) {
         Vector2D oldValue = position;
-        position.x = x;
+        position.setX(x);
         pcs.firePropertyChange("position", oldValue, position);
     }
 
     /**
-     * Getter for top right corner position of the object.
-     * @return position Vector2D
+     * Gets the top right corner position of this object.
+     * @return position as <code>Vector2D</code>
      */
     public Vector2D getTopRightCorner() { return new Vector2D(position).add(width, 0); }
 
     /**
-     * Getter for top left corner position of the object.
-     * @return position Vector2D
+     * Gets the top left corner position of this object.
+     * @return position as <code>Vector2D</code>
      */
     public Vector2D getTopLeftCorner() { return new Vector2D(position); }
 
     /**
-     * Getter for bottom right corner position of the object.
-     * @return position Vector2D
+     * Gets the bottom right corner position of this object.
+     * @return position as <code>Vector2D</code>
      */
     public Vector2D getBotRightCorner() { return new Vector2D(position).add(width, height); }
 
     /**
-     * Getter for bottom left corner position of the object.
-     * @return position Vector2D
+     * Gets the bottom left corner position of this object.
+     * @return position as <code>Vector2D</code>
      */
     public Vector2D getBotLeftCorner() { return new Vector2D(position).add(0, height); }
 

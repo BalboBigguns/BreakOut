@@ -74,7 +74,6 @@ public class Logger {
     }
 
     private Logger(Timeline globalTimeline) {
-
         logOutput = System.out;
 
         Timeline loggerTimeline = new Timeline(new KeyFrame(Duration.millis(LOG_RATE), new EventHandler<ActionEvent>() {

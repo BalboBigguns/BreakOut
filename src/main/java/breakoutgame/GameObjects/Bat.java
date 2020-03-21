@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import main.java.breakoutgame.GameHelpers.Vector2D;
 
 public class Bat extends DynamicGameObject {
     static final private double VELOCITY = 10;
@@ -42,7 +43,7 @@ public class Bat extends DynamicGameObject {
     @Override
     public void draw() {
         map.gc.setFill(Color.WHITE);
-        map.gc.fillRect(position.x, position.y, width, height);
+        map.gc.fillRect(getLeft(), getTop(), getWidth(), getHeight());
     }
 
     @Override
@@ -62,14 +63,14 @@ public class Bat extends DynamicGameObject {
     }
 
     private void moveLeft() {
-        velocity.x = -VELOCITY;
+        setVelocity(new Vector2D(-VELOCITY, 0));
     }
 
     private void moveRight() {
-        velocity.x = VELOCITY;
+        setVelocity(new Vector2D(VELOCITY, 0));
     }
 
     private void stop() {
-        velocity.x = 0;
+        setVelocity(new Vector2D(0, 0));
     }
 }

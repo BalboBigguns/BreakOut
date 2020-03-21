@@ -20,8 +20,8 @@ class Edge {
     private double yBotBound;
 
     public Edge(Vector2D start, Vector2D end) {
-        this.start = new Vector2D(start.x, Map.MAP_HEIGHT - start.y);
-        this.end = new Vector2D(end.x, Map.MAP_HEIGHT - end.y);
+        this.start = new Vector2D(start.getX(), Map.MAP_HEIGHT - start.getY());
+        this.end = new Vector2D(end.getX(), Map.MAP_HEIGHT - end.getY());
 
         if (start.equals(end)) {
             throw new InvalidParameterException("Making edge out of two equal vectors!");
@@ -30,34 +30,34 @@ class Edge {
         type = type();
 
         if (type == EdgeType.DIAGONAL) {
-            a = (this.end.y - this.start.y) / (this.end.x - this.start.x);
-            b = this.start.y - a * this.start.x;
+            a = (this.end.getY() - this.start.getY()) / (this.end.getX() - this.start.getX());
+            b = this.start.getY() - a * this.start.getX();
         }
 
-        if (this.start.x < this.end.x) {
-            xLeftBound = this.start.x;
-            xRightBound = this.end.x;
+        if (this.start.getX() < this.end.getX()) {
+            xLeftBound = this.start.getX();
+            xRightBound = this.end.getX();
         }
         else {
-            xLeftBound = this.end.x;
-            xRightBound = this.start.x;
+            xLeftBound = this.end.getX();
+            xRightBound = this.start.getX();
         }
 
-        if (this.start.y < this.end.y) {
-            yBotBound = this.start.y;
-            yTopBound = this.end.y;
+        if (this.start.getY() < this.end.getY()) {
+            yBotBound = this.start.getY();
+            yTopBound = this.end.getY();
         }
         else {            
-            yTopBound = this.end.y;
-            yBotBound = this.start.y;
+            yTopBound = this.end.getY();
+            yBotBound = this.start.getY();
         }
     }
 
     public EdgeType type() {
-        if (start.x - end.x == 0) {
+        if (start.getX() - end.getX() == 0) {
             return EdgeType.VERTICAL;
         }
-        else if (start.y - end.y == 0) {
+        else if (start.getY() - end.getY() == 0) {
             return EdgeType.HORIZONTAL;
         }
         else {

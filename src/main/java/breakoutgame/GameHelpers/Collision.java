@@ -5,11 +5,11 @@ import main.java.breakoutgame.GameObjects.Bat;
 import main.java.breakoutgame.Utils.Logger;
 
 public class Collision {
-    public enum Type {
+    public enum CollisionType {
         NONE, LEFT_BOUND, RIGHT_BOUND, TOP_BOUND, BOTTOM_BOUND, BLOCK, BAT;
     }
 
-    private Type type;
+    private CollisionType type;
     private GameObject objCollided;
 
     /**
@@ -17,7 +17,7 @@ public class Collision {
      * Property objCollided is initiated with null.
      * @param t type to initiate the collision with
      */
-    public Collision(Type t) {
+    public Collision(CollisionType t) {
         type = t;
         objCollided = null;
     }
@@ -32,10 +32,10 @@ public class Collision {
     public Collision(GameObject obj) {
         objCollided = obj;
         if (obj instanceof Block) {
-            type = Type.BLOCK;
+            type = CollisionType.BLOCK;
         }
         else if (obj instanceof Bat) {
-            type = Type.BAT;
+            type = CollisionType.BAT;
         }
         else {
             Logger.getGlobalInstance().printEvent("UNKNOWN COLLISION TYPE!!! Update Collision class with more GameObject types.", Logger.LogType.ERROR);
@@ -52,10 +52,10 @@ public class Collision {
     }
 
     /**
-     * Getter for the type of collision
+     * Gets the type of collision
      * @return type of collision
      */
-    public Type getType() {
+    public CollisionType getType() {
         return type;
     }
 }
