@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.FontWeight;
 import main.java.breakoutgame.Utils.Logger;
 
 import javafx.scene.canvas.Canvas;
@@ -68,20 +69,23 @@ public class GameManager {
         });
 
         bat = new Bat(map, canvas.getWidth() / 2 - Bat.INIT_WIDTH / 2 , canvas.getHeight() - Bat.INIT_HEIGHT * 2);
-        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2.0, 600);
+        ball = new Ball(map, canvas.getWidth() / 2 - Ball.INIT_BALL_SIZE / 2, 600);
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(20), t -> {
-            bat.update();
-            ball.update();
-            backgroundRefresh(gc);
-            endGameCheck();
+        timeline = new Timeline(new KeyFrame(Duration.millis(20), new EventHandler<>() {
+            @Override
+            public void handle(ActionEvent t) {
+                bat.update();
+                ball.update();
+                backgroundRefresh(gc);
+                endGameCheck();
 
-            // here goes all of the drawing methods
-            drawHud();
-            bat.draw();
-            map.drawBlocks();
-            ball.draw();
+                // here goes all of the drawing methods
+                drawHud();
+                bat.draw();
+                map.drawBlocks();
+                ball.draw();
 
+            }
         }));
 
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -109,15 +113,14 @@ public class GameManager {
         timeline.pause();
         pauseText = new Text(100, 300, "GAME PAUSED");
         pauseText.setFill(Color.web("#E74C3C"));
-        pauseText.setFont(Font.font("Bangers", 84));
+        pauseText.setFont(Font.font("Agency FB", FontWeight.BOLD, 84));
         rootPane.getChildren().add(pauseText);
 
         pauseButton.setImage(new Image(getClass().getResourceAsStream("/main/resources/Icon/resumeImg.png"), 36, 36, false, false));
     }
 
     private void checkDebugModeOn() {
-        Logger.createGlobalInstance(timeline);
-        Logger logger = Logger.getGlobalInstance();
+        Logger logger = new Logger(timeline, 500);
 
         // List of traced objects
         logger.addObjectToTrack(ball);
@@ -144,7 +147,7 @@ public class GameManager {
         gc.fillRect(0 ,0, GameFXApp.WINDOW_WIDTH, Map.MAP_TOP_BOUNDARY);
 
         gc.setFill(Color.web("#9b59b6"));
-        gc.setFont(Font.font("Bangers", 24));
+        gc.setFont(Font.font("Agency FB", FontWeight.BOLD, 24));
         gc.fillText(String.valueOf(map.lives) + " UP", 18, 26);
         //gc.drawImage();
     }
@@ -160,7 +163,7 @@ public class GameManager {
         if (map.lives == 0 || map.blocks.isEmpty()) {
             timeline.stop();
             Text endGameText = new Text(100, 300, map.lives == 0 ? "GAME OVER": "YOU WON");
-            endGameText.setFont(Font.font("Bangers", 84));
+            endGameText.setFont(Font.font("Agency FB", FontWeight.BOLD, 84));
             endGameText.setFill(map.lives == 0 ? Color.web("#E74C3C") : Color.web("#B9FAF8"));
             VBox endGame = new VBox();
             endGame.setStyle("-fx-background-color: rgb(66,66,66, 0.5)");

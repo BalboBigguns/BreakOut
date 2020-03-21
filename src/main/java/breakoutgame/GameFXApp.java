@@ -1,7 +1,6 @@
 package main.java.breakoutgame;
 
 import javafx.scene.image.Image;
-import javafx.scene.text.Font;
 import main.java.breakoutgame.GameObjects.GameManager;
 import main.java.breakoutgame.UI.MainMenuController;
 
@@ -10,14 +9,10 @@ import javafx.scene.Scene;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
-
 
 public class GameFXApp extends Application {
     public static final int WINDOW_WIDTH = 640;
-    public static final int WINDOW_HEIGHT = 660;
+    public static final int WINDOW_HEIGHT = 700;
 
     public static final boolean DEBUG_MODE = false;  // turns on debug logs and allows for game pause and manual ball manipulations
 
@@ -29,12 +24,10 @@ public class GameFXApp extends Application {
         primaryStage.setTitle("Breakout");
         primaryStage.setResizable(false);
 
-        loadFonts();
-
         try {
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/main/resources/Icon/IconWhite.png")));
         } catch (Exception e) {
-            System.out.println("IconWhite loading failed: " + e.getMessage());
+            System.out.println("IconWhite loading failed: " + e.getMessage() + "\nSearch path: " + getClass().getResource("Icon/IconWhite.png").toString());
         }
 
         loadMenu(primaryStage);
@@ -50,21 +43,6 @@ public class GameFXApp extends Application {
         };
 
         primaryStage.show();
-    }
-
-    private void loadFonts() {
-        List<String> availableFonts = Arrays.asList(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
-
-        if (!availableFonts.contains("Bangers")) {
-            try {
-                if (Font.loadFont(getClass().getResourceAsStream("/main/resources/Fonts/Bangers-Regular.ttf"), 24) == null) {
-                    System.out.println("Bangers-Regular loading failed!");
-                }
-            } catch (Exception e) {
-                System.out.println("Bangers-Regular loading failed: " + e.getMessage());
-            }
-        }
-
     }
 
     private void loadMenu(Stage primaryStage) {

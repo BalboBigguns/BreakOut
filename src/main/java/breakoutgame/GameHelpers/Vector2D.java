@@ -2,35 +2,20 @@ package main.java.breakoutgame.GameHelpers;
 
 import java.lang.Math;
 
-
 public class Vector2D {
     public double x;
     public double y;
 
-    /**
-     * Basic constructor using two double values to create position vector
-     * @param x x coordinate of Vector2D
-     * @param y y coordinate of Vector2D
-     */
     public Vector2D(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    /**
-     * Copy constructor.
-     * @param toCopy Vector2D to copy
-     */
     public Vector2D(Vector2D toCopy) {
         this.x = toCopy.x;
         this.y = toCopy.y;
     }
 
-    /**
-     *
-     * @param vec
-     * @return
-     */
     public Vector2D add(Vector2D vec) {
        x += vec.x; 
        y += vec.y;
@@ -81,7 +66,6 @@ public class Vector2D {
     public boolean equals(Vector2D vec) {
         return (x == vec.x) && (y == vec.y);
     }
-
 
     @Override
     public String toString() {

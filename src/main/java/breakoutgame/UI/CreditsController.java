@@ -3,6 +3,7 @@ package main.java.breakoutgame.UI;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
 

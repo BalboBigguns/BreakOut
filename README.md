@@ -7,11 +7,11 @@
   * basic collision detection
   * basic game objects (ball, bat, blocks)
   * drawing
-  * add better UI
   
 **ToDo:**
   * add more game objects (items dropping from blocks)
   * add perks
+  * add better UI
   * improve geometry of objects (rounded shapes -> extended collision detection)
   * add more levels
   * ???

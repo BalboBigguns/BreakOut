@@ -126,7 +126,7 @@ public abstract class DynamicGameObject extends GameObject {
         removeFromGrid();
 
         if (right() >= Map.MAP_WIDTH) {
-            setRight(Map.MAP_WIDTH);
+            setRigh(Map.MAP_WIDTH);
             output = new Collision(Type.RIGHT_BOUND);
         }
         else if (left() < 0) {
@@ -177,13 +177,13 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    setRight((int)collisionPoint.x); // getting the moving obj out of collision
+                    setRigh((int)collisionPoint.x); // getting the moving obj out of collision
                     setBot((int)collisionPoint.y);  // getting the moving obj out of collision
                     velocity.x *= -1;
                 }
             }
             else {
-                setRight((int)collisionPoint.x); // getting the moving obj out of collision
+                setRigh((int)collisionPoint.x); // getting the moving obj out of collision
                 setBot((int)collisionPoint.y);  // getting the moving obj out of collision
                 velocity.y *= -1;
             }
@@ -295,13 +295,13 @@ public abstract class DynamicGameObject extends GameObject {
                     }
                 }
                 else {
-                    setRight((int)collisionPoint.x);
+                    setRigh((int)collisionPoint.x);
                     setTop((int)collisionPoint.y);
                     velocity.x *= -1;
                 }
             }
             else {
-                setRight((int)collisionPoint.x);
+                setRigh((int)collisionPoint.x);
                 setTop((int)collisionPoint.y);
                 velocity.y *= -1;
             }

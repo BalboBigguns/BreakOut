@@ -6,12 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="660" prefWidth="640.0" stylesheets="@styleButtons.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.MainMenuController">
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="640.0" stylesheets="@styleButtons.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.breakoutgame.UI.MainMenuController">
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
          <Label alignment="TOP_CENTER" text="BREAKOUT">
             <font>
-               <Font name="Bangers" size="120.0" />
+               <Font name="Agency FB" size="120.0" />
             </font>
             <HBox.margin>
                <Insets right="10.0" />
@@ -29,15 +29,23 @@
       <VBox.margin>
          <Insets bottom="10.0" top="10.0" />
       </VBox.margin>
-   </Button>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font></Button>
    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onCreditsButtonPress" prefHeight="50.0" prefWidth="300.0" text="CREDITS">
       <VBox.margin>
          <Insets bottom="10.0" top="10.0" />
       </VBox.margin>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font>
    </Button>
    <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#onQuitButtonPress" prefHeight="50.0" prefWidth="300.0" text="QUIT">
       <VBox.margin>
          <Insets bottom="10.0" top="10.0" />
       </VBox.margin>
+      <font>
+         <Font name="Agency FB Bold" size="25.0" />
+      </font>
    </Button>
 </VBox>

@@ -1,16 +1,17 @@
 package main.java.breakoutgame.GameHelpers;
 
 import main.java.breakoutgame.GameObjects.Map;
+
 import java.security.InvalidParameterException;
 
 class Edge {
-    private enum EdgeType {
+    protected enum EdgeType {
         HORIZONTAL, VERTICAL, DIAGONAL;
     }
-    private Vector2D start;
-    private Vector2D end;
+    protected Vector2D start;
+    protected Vector2D end;
 
-    private EdgeType type;
+    protected EdgeType type;
     private double a;
     private double b;
 
