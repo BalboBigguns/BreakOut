@@ -7,52 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/breakout.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Breakout_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Breakout.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameFXApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Collision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/DynamicGameObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Edge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/GameObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameHelpers/Vector2D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Ball.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Bat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Block.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/GameManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Map.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/Credits.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/CreditsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/CreditsView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/MainMenuView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/styleButtons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/UI/stylesCredits.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/Utils/Loggable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/Utils/Logger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fonts/RetroGaming.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Icon/IconOpac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Icon/IconWhite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Icon/pauseImg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Icon/resumeImg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LevelMaps/level_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LevelMaps/level_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Breakout.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Breakout.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameFXApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameFXApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/breakoutgame/GameObjects/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +94,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1WgBb0X4dPgzqMCKNnRLfBqwGwv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -160,26 +113,20 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.3689655" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.breakoutgame" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Michał\Desktop\Repos\Java\BreakoutM\src\main\resources\com\breakoutgame\css" />
-      <recent name="C:\Users\Michał\Desktop\Repos\Java\BreakoutM\src\main\resources\com\breakoutgame\FXML" />
       <recent name="C:\Users\Michał\Desktop\Repos\Java\Breakout\src\main\resources\Icon" />
       <recent name="C:\Users\Michał\Desktop\Repos\Java\Breakout\src\main\java\breakoutgame" />
       <recent name="C:\Users\Michał\Desktop\Repos\Java\Breakout\src\main\resources\Fonts" />
@@ -328,9 +275,6 @@
       <workItem from="1580307302343" duration="591000" />
       <workItem from="1580308016348" duration="2198000" />
       <workItem from="1580312315947" duration="8481000" />
-      <workItem from="1586888191876" duration="91000" />
-      <workItem from="1586893329341" duration="114000" />
-      <workItem from="1586893474629" duration="14969000" />
     </task>
     <servers />
   </component>
@@ -350,10 +294,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="26" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1579700163950" />
-    <state x="275" y="23" key="#Project_Structure" timestamp="1586898521098">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="23" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1586898521098" />
     <state x="137" y="23" width="1204" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580313207706">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -370,14 +310,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="106" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1580308638989" />
-    <state x="534" y="76" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1586905351363">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="534" y="76" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1586905351363" />
-    <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586901142970">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="479" y="250" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1586901142970" />
     <state x="189" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579791284219">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -390,26 +322,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="424" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1580156808809" />
-    <state x="458" y="181" key="FileChooserDialogImpl" timestamp="1586896933214">
+    <state x="458" y="181" key="FileChooserDialogImpl" timestamp="1580310215166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="458" y="181" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586896933214" />
-    <state width="1323" height="318" key="GridCell.Tab.0.bottom" timestamp="1586908682863">
+    <state x="458" y="181" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580310215166" />
+    <state width="1323" height="98" key="GridCell.Tab.0.bottom" timestamp="1580320816077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586908682863" />
-    <state width="1323" height="318" key="GridCell.Tab.0.center" timestamp="1586908682863">
+    <state width="1323" height="98" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
+    <state width="1323" height="98" key="GridCell.Tab.0.center" timestamp="1580320816077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586908682863" />
-    <state width="1323" height="318" key="GridCell.Tab.0.left" timestamp="1586908682862">
+    <state width="1323" height="98" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
+    <state width="1323" height="98" key="GridCell.Tab.0.left" timestamp="1580320816077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586908682862" />
-    <state width="1323" height="318" key="GridCell.Tab.0.right" timestamp="1586908682863">
+    <state width="1323" height="98" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
+    <state width="1323" height="98" key="GridCell.Tab.0.right" timestamp="1580320816077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586908682863" />
+    <state width="1323" height="98" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580320816077" />
     <state width="1323" height="253" key="GridCell.Tab.1.bottom" timestamp="1580314831555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -426,10 +358,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580314831555" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1586905391433">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1580313291286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586905391433" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580313291286" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579653058469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -438,14 +370,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1580320069751" />
-    <state x="65" y="0" key="new project wizard" timestamp="1586888277055">
+    <state x="65" y="0" key="new project wizard" timestamp="1580165093141">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1586888277055" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1586893859400">
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1580165093141" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1580130682766">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586893859400" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580130682766" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
